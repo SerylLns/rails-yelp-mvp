@@ -1,0 +1,12 @@
+
+<%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category %>
+    <%= f.submit class: "btn btn-info" %>
+<% end %>
+<br>
+<br>
+<%= link_to "< home", restaurants_path, class: "btn btn-success"  %>
+  

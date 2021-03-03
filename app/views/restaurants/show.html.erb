@@ -1,0 +1,28 @@
+<div class="card mt-5 text-center">
+  <div class="card-body">
+    <h1 class="card-title"><%= @restaurant.name %></h1>
+      <p class="card-subtitle"><%= @restaurant.address %></p>
+      <p class="card-subtitle"><%= @restaurant.category %> </p>
+      <p class="card-subtitle"><%= @restaurant.phone_number %></p>
+  </div>
+</div>
+
+<hr>
+
+<hr>
+<%= link_to "< Home", restaurants_path, class: "btn btn-primary" %>
+<%= link_to "Add review", new_restaurant_review_path(@restaurant), class: "btn btn-success"  %>
+<hr>
+<div class="card">
+    <div class="card-header">
+        Rating
+    </div>
+    <ul class="list-group list-group-flush">
+      <% @restaurant.reviews.each do |review| %>
+          <li class="list-group-item">
+              <p> <%= review.content %></p>
+              <p><%= "⭐" * review.rating %></p>
+          </li>
+      <% end %>
+    </ul>
+</div>
